@@ -39,5 +39,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "7.13.14",
+    "@babel/plugin-transform-runtime": "7.12.1",
+    "@babel/preset-env": "7.13.12",
+    "@babel/preset-react": "7.13.13",
+    "@babel/preset-typescript": "7.12.1",
+    "@babel/runtime": "7.12.1"
   }
 }
