@@ -1,6 +1,5 @@
 import path from "path";
-import webpack from "webpack";
-import 'webpack-dev-server';
+import webpack from 'webpack';
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
 const config: webpack.Configuration = {
@@ -36,14 +35,14 @@ const config: webpack.Configuration = {
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
-  devtool: "inline-source-map"
-  // devServer: {
-  //   contentBase: path.join(__dirname, "build"),
-  //   historyApiFallback: true,
-  //   port: 4000,
-  //   open: true,
-  //   hot: true
-  // },
+  devtool: "inline-source-map",
+  devServer: {
+    contentBase: path.join(__dirname, "build"),
+    historyApiFallback: true,
+    port: 8080,
+    open: true,
+    hot: true
+  },
 };
 
 export default config;
