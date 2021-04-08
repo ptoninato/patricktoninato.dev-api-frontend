@@ -39,9 +39,11 @@ const config: webpack.Configuration = {
   devServer: {
     contentBase: path.join(__dirname, "build"),
     historyApiFallback: true,
+    host: '0.0.0.0',
     port: 8080,
     open: true,
-    hot: true
+    hot: true,
+    watchOptions: { poll: true },
   },
 };
 
