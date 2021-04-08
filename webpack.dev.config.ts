@@ -1,6 +1,8 @@
 import path from "path";
 import webpack from 'webpack';
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import ESLintPlugin from "eslint-webpack-plugin";
 
 const config: webpack.Configuration = {
   mode: "development",
@@ -34,6 +36,12 @@ const config: webpack.Configuration = {
       template: "src/index.html",
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new ForkTsCheckerWebpackPlugin({
+      async: false
+    }),
+    new ESLintPlugin({
+      extensions: ["js", "jsx", "ts", "tsx"],
+    }),
   ],
   devtool: "inline-source-map",
   devServer: {
