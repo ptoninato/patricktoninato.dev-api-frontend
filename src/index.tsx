@@ -1,17 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import * as React from "react";
+import { Admin, Resource, ListGuesser } from 'react-admin';
+import jsonServerProvider from 'ra-data-json-server';
 
+const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
 const App = () => (
-  <h1>
-    My React and TypeScript{" "}
-   {new Date().toLocaleDateString()}
-  </h1>
-  
+  <Admin dataProvider={dataProvider}>
+       <Resource name="users" list={ListGuesser} />
+  </Admin>
 );
-
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+export default App;
