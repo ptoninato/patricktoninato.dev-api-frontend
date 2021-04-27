@@ -53,7 +53,7 @@ const config: webpack.Configuration = {
     open: true,
     hot: true,
     watchOptions: { poll: true },
-  },
+  }
 };
 
 export default config;
