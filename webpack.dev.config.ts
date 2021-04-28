@@ -27,6 +27,7 @@ const config: webpack.Configuration = {
           },
         },
       },
+      { test:/\.(s*)css$/, use:['style-loader','css-loader'] },
     ],
   },
   resolve: {
